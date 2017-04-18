@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 import org.codethink.jdbc.universal.dao.impl.BaseDaoImpl;
 import org.codethink.jdbc.universal.entity.Department;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  *
- * 
+ * 通用Dao层测试类
  *
  * @author CaiXiangning 
  * @date Apr 16, 2017 
@@ -33,7 +34,7 @@ public class BaseDaoTest{
 		department.setDepartNumber("1002");
 		
 		boolean result = baseDao.insert(department);
-		System.out.println(result);
+		Assert.assertEquals(true, result);
 	}
 	
 	@Test
@@ -44,7 +45,7 @@ public class BaseDaoTest{
 		department.setDepartNumber("10011");
 		
 		boolean result = baseDao.Update(department, "1");
-		System.out.println(result);
+		Assert.assertEquals(true, result);
 	}
 	
 	@Test
@@ -52,6 +53,6 @@ public class BaseDaoTest{
 		BaseDao<Department> baseDao = new BaseDaoImpl<>();
 		
 		boolean result = baseDao.Delete(Department.class, "2");
-		System.out.println(result);
+		Assert.assertEquals(true, result);
 	}
 }
